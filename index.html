@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="gutter-right logo">
+            <img src="assets/big-logo.png"/>
+        </div>
+    </header>
+    <main>
+        <div><h1>Welcome to ROCK PAPER SCISSORS!</h1
+        </div>
+    </header>
+    <main>
+        
+        <ol type="1">
+            <li>Begin by choosing which option you 
+                want to "throw", rock, paper or scissors.
+            </li>
+            <li>Then click on the button to "throw" 
+                your choice.
+            </li>
+            <li>You will have five chances to win, lose or 
+                draw.
+            </li>
+            <li>The winner will be based on the most wins out
+                of five "throws".</li>
+        </ol>
+
+        <label for='rock'>👊rock</label> <input type='radio' id='rock'>  
+        <label for='paper'>✋paper</label> <input type='radio' id='paper'> 
+        <label for='scissors'>✌️scissors</label> <input type='radio' id='scissors'>
+
+        <button id='throw'>Throw!</button>
+
+
+        <output>result of last throw</output>
+        <output>wins, losses, draws</output>
+        <output>winner/loser</output>
+
+        
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
