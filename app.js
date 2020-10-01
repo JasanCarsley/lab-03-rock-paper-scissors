@@ -1,3 +1,7 @@
+import {
+    doesUserWin, getComputerThrow
+} from './utils.js';
+
 // import functions and grab DOM elements
 const throwButton = document.getElementById('throw');
 const resetButton = document.getElementById('reset-button');
@@ -25,47 +29,25 @@ throwButton.addEventListener('click', () => {
 
 
     // Get computers' choice
-    const randomNumber = Math.floor(Math.random() * 3);
-    let computerThrow
-
-    if (randomNumber === 0) {
-        computerThrow = 'rock';
-    } else if (randomNumber === 1) {
-        computerThrow = 'paper';
-    } else {
-        computerThrow = 'scissors';
-    }
+    const computerThrow = getComputerThrow();
 
     
     // Decides if User wins or Not
-    if (computerThrow === userThrow) {
+    if (doesUserWin(userThrow, computerThrow) === 'draw') {
         displayLastThrow.textContent = 'result of last throw: Draw';
         draws++;
     }
-    else if (computerThrow === 'rock' && userThrow === 'paper') {
+    else if (doesUserWin(userThrow, computerThrow) === 'win') {
         displayLastThrow.textContent = 'result of last throw: Win';
         wins ++;
     }
-    else if (computerThrow === 'rock' && userThrow === 'scissors') {
+    else if (doesUserWin(userThrow, computerThrow) === 'loss') {
         displayLastThrow.textContent = 'result of last throw: Loss';
         losses++;
     }
-    else if (computerThrow === 'paper' && userThrow === 'rock') {
-        displayLastThrow.textContent = 'result of last throw: Loss';
-        losses++;
-    }
-    else if (computerThrow === 'paper' && userThrow === 'scissors') {
-        displayLastThrow.textContent = 'result of last throw: Win';
-        wins++;
-    }
-    else if (computerThrow === 'scissors' && userThrow === 'rock') {
-        displayLastThrow.textContent = 'result of last throw: Win';
-        wins++;
-    }
-    else {
-        displayLastThrow.textContent = 'result of last throw: Loss';
-        losses++;
-    }
+    
+
+
 
     displayWinLossDraw.textContent = `wins ${wins}, losses ${losses}, draws ${draws}`;
 
