@@ -9,50 +9,74 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Rock paper scissors</title>
 </head>
 
 <body>
+
     <header>
         <div class="gutter-right logo">
             <img src="assets/big-logo.png"/>
         </div>
     </header>
+
+    <h1 class='text-center'>Welcome to ROCK PAPER SCISSORS!</h1>
+
     <main>
-        <div><h1>Welcome to ROCK PAPER SCISSORS!</h1
-        </div>
-    </header>
-    <main>
-        
-        <ol type="1">
-            <li>Begin by choosing which option you 
-                want to "throw", rock, paper or scissors.
-            </li>
-            <li>Then click on the button to "throw" 
-                your choice.
-            </li>
-            <li>You will have five chances to win, lose or 
-                draw.
-            </li>
-            <li>The winner will be based on the most wins out
-                of five "throws".</li>
-        </ol>
 
-        <label for='rock'>👊rock</label> <input type='radio' id='rock'>  
-        <label for='paper'>✋paper</label> <input type='radio' id='paper'> 
-        <label for='scissors'>✌️scissors</label> <input type='radio' id='scissors'>
-
-        <button id='throw'>Throw!</button>
+        <article><!-- Instructions -->
+            <ol type="1">
+                <li>Begin by choosing which option you 
+                    want to "throw", rock, paper or scissors.
+                </li>
+                <li>Then click on the button to "throw" 
+                    your choice.
+                </li>
+                <li>You will have five chances to win, lose or 
+                    draw.
+                </li>
+                <li>The winner will be based on the most wins out
+                    of five "throws".</li>
+            </ol>
+        </article>
 
 
-        <output>result of last throw</output>
-        <output>wins, losses, draws</output>
-        <output>winner/loser</output>
+        <section id="game-section"> <!-- Input and Buttons Section -->
+            <div id="throw-functions">
+                <label for='rock'>👊rock</label> <input type='radio' id='rock' name='choices'>  
+                <label for='paper'>✋paper</label> <input type='radio' id='paper' name='choices'> 
+                <label for='scissors'>✌️scissors</label> <input type='radio' id='scissors' name='choices'>
 
-        
+                <button id='throw'>Throw!</button>
+
+
+                <output id="last-throw">result of last throw</output>
+                <output id="win-loss-draw">wins 0, losses 0, draws 0</output>
+                <output id="winner-loser">winner/loser</output>
+
+                <button id="reset-button">Reset!</button>
+            </div>
+
+            <div>
+                <p class="games-left-text">Throws Left</p>
+                <p id="game-counter">5</p>
+            </div>
+        </section>
+
+
+
+
     </main>
 
+
+    <footer>
+        <span id="matches-counter">Matches played: 0</span>
+        <span id="resets-counter">Resets: 0</span>
+    </footer>
+
+
     <script type="module" src="app.js"></script>
+
 </body>
 
 </html>

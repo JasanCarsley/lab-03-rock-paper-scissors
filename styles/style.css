@@ -59,17 +59,34 @@ header {
     box-shadow: var(--shadow);
 }
 
-footer {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+.text-center {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
 }
 
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
+section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section p {
+    font-size: 6em;
+    text-align: center;
+
+    margin: 0px 100px;
+}
+
+.games-left-text {
+    font-size: 4em;
 }
 
 .gutter-right {
@@ -84,42 +101,17 @@ header img {
     height: var(--header-height);
 }
 
-
-
-content {
-    width: 80%;
-}
-
-p {
-    margin: var(--gutter);
-}
-  
 footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
     display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+    flex-direction: row;
+
+    justify-content: center;
 }
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
 
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
+footer span {
+    padding: 10px;
+}
 
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
-  }
+.hidden {
+    display: none;
+}
