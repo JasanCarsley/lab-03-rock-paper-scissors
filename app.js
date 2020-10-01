@@ -5,13 +5,17 @@ const resetButton = document.getElementById('reset-button');
 const displayLastThrow = document.getElementById('last-throw');
 const displayWinLossDraw = document.getElementById('win-loss-draw');
 const displayWinnerLoser = document.getElementById('winner-loser');
-const gameCounter = document.getElementById('game-counter');
+const throwCounter = document.getElementById('game-counter');
+const matchesCounter = document.getElementById('matches-counter');
+const resetsCounter = document.getElementById('resets-counter');
 
 // initialize state
 let wins = 0;
 let losses = 0;
 let draws = 0;
-let gamesLeft = 5;
+let throwsLeft = 5;
+let matchesPlayed = 0;
+let resets = 0;
 
 
 
@@ -65,10 +69,10 @@ throwButton.addEventListener('click', () => {
 
     displayWinLossDraw.textContent = `wins ${wins}, losses ${losses}, draws ${draws}`;
 
-    gamesLeft--;
-    gameCounter.textContent = gamesLeft;
+    throwsLeft--;
+    throwCounter.textContent = throwsLeft;
 
-    if (gamesLeft === 0) {
+    if (throwsLeft === 0) {
         throwButton.disabled = true;
 
         if (wins === losses) {
@@ -80,6 +84,9 @@ throwButton.addEventListener('click', () => {
         else {
             displayWinnerLoser.textContent = "Computer wins!";
         }
+
+        matchesPlayed++;
+        matchesCounter.textContent = `Matches played: ${matchesPlayed}`;
     }
 })
 
@@ -89,12 +96,15 @@ resetButton.addEventListener('click', () => {
     wins = 0;
     losses = 0;
     draws = 0;
-    gamesLeft = 5;
+    throwsLeft = 5;
+    resets++;
 
     displayWinnerLoser.textContent = 'winner/loser';
     displayLastThrow.textContent = 'result of last throw';
     displayWinLossDraw.textContent = 'wins 0, losses 0, draws 0';
-    gameCounter.textContent = gamesLeft;
+    throwCounter.textContent = throwsLeft;
+
+    resetsCounter.textContent = `Resets: ${resets}`;
 
     throwButton.disabled = false;
 })
