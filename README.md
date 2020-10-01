@@ -21,4 +21,10 @@ HTML
 5) Display for result of last "throw"
 6) Display for number of total wins, losses, and draws
 7) Display for who wins based on number of wins in a round
-8) 
+
+
+After fifth throw:
+   - Disable Throw Button
+   - Update winner/loser element
+      - Figure who wins
+         * Compare wins and losses
