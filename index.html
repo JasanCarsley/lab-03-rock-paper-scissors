@@ -38,18 +38,19 @@
                 of five "throws".</li>
         </ol>
 
-        <label for='rock'>👊rock</label> <input type='radio' id='rock'>  
-        <label for='paper'>✋paper</label> <input type='radio' id='paper'> 
-        <label for='scissors'>✌️scissors</label> <input type='radio' id='scissors'>
+        <label for='rock'>👊rock</label> <input type='radio' id='rock' name='choices'>  
+        <label for='paper'>✋paper</label> <input type='radio' id='paper' name='choices'> 
+        <label for='scissors'>✌️scissors</label> <input type='radio' id='scissors' name='choices'>
 
         <button id='throw'>Throw!</button>
 
 
-        <output>result of last throw</output>
-        <output>wins, losses, draws</output>
-        <output>winner/loser</output>
+        <output id="last-throw">result of last throw</output>
+        <output id="win-loss-draw">wins 0, losses 0, draws 0</output>
+        <output id="winner-loser">winner/loser</output>
 
-        
+        <button id="reset-button">Reset!</button>
+
     </main>
 
     <script type="module" src="app.js"></script>
